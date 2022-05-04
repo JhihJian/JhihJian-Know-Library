@@ -1,10 +1,10 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'JhihJian-Know-Library',
+  title: 'JhihJian',
   favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+    'https://avatars.githubusercontent.com/u/23160988?s=400&u=2cdc89d0d9c79eaf3c03d7b05c33e231f3696ede&v=4',
+  logo: 'https://avatars.githubusercontent.com/u/23160988?s=400&u=2cdc89d0d9c79eaf3c03d7b05c33e231f3696ede&v=4',
   outputPath: 'docs-dist',
   // more config: https://d.umijs.org/config
   base: '/JhihJian-Know-Library',
