@@ -1,9 +1,14 @@
 # JhihJian-Know-Library
 
-create by 
+create by
+
 ```
 yarn create @umijs/dumi-lib
 ```
+
+配置自动部署到 GitHub Pages
+
+打包文件发布到 Pages 后，显示页面为空白，控制台报错 Failed to load resource 无法加载 css js 文件
 
 ## Getting Started
 
