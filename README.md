@@ -57,4 +57,4 @@ Build library via `father-build`,
 $ npm run build
 ```
 
-2
+3
