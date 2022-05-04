@@ -15,6 +15,16 @@ yarn create @umijs/dumi-lib
   publicPath: '/JhihJian-Know-Library/',
 ```
 
+github pages Action 过程报错
+
+```
+Push the commit or tag
+/usr/bin/git push origin gh-pages
+remote: Permission to JhihJian/JhihJian-Know-Library.git denied to github-actions[bot].
+fatal: unable to access 'https://github.com/JhihJian/JhihJian-Know-Library.git/': The requested URL returned error: 403
+Error: Action failed with "The process '/usr/bin/git' failed with exit code 128"
+```
+
 ## Getting Started
 
 Install dependencies,
