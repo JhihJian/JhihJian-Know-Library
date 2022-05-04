@@ -25,6 +25,8 @@ fatal: unable to access 'https://github.com/JhihJian/JhihJian-Know-Library.git/'
 Error: Action failed with "The process '/usr/bin/git' failed with exit code 128"
 ```
 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information. fatal: Authentication failed for 'https://github.com/JhihJian/JhihJian-Know-Library.git/'
+
 ## Getting Started
 
 Install dependencies,

@@ -4,10 +4,15 @@ on:
   push:
     branches:
       - origin # default branch
+  schedule:
+    - cron: "22 22 * * *"
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
       - run: npm install
@@ -15,5 +20,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./docs-dist
