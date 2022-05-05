@@ -1,13 +1,13 @@
 ---
-title: 开发文档
-order: 1
-toc: menu
-nav:
-  title: 指南
+title: 首页
   order: 1
+  toc: menu
+
 ---
 
-## 目录结构
+## 开发文档
+
+### 目录结构
 
 <Tree>
   <ul>

@@ -10,4 +10,13 @@ export default defineConfig({
   base: '/JhihJian-Know-Library',
   publicPath: '/JhihJian-Know-Library/',
   exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
+  resolve: { includes: ['docs'] },
+  mode: 'site',
+  navs: [
+    null,
+    {
+      title: 'GitHub',
+      path: 'https://github.com/JhihJian/JhihJian-Know-Library',
+    },
+  ],
 });
