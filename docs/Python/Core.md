@@ -102,6 +102,17 @@ asyncio.run 的理解,运行的流程
 run()
 ```
 
+#### python destroy object
+
+#### int to bytes-like and from bytes-like
+
+```python
+# int to bytes
+int.from_bytes(score, byteorder='big')
+# int from bytes
+i.to_bytes(1, byteorder='big')
+```
+
 ## 设计模式
 
 ### 单例
