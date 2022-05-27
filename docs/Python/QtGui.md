@@ -142,3 +142,75 @@ a = Analysis(
 ```
 
 ### pyinstaller 生成后报毒
+
+### 在页面打印日志
+
+将日志输出到组件
+
+```
+
+import sys
+from PyQt5 import QtWidgets
+import logging
+
+# Uncomment below for terminal log messages
+# logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+class QTextEditLogger(logging.Handler):
+    def __init__(self, parent):
+        super().__init__()
+        self.widget = QtWidgets.QPlainTextEdit(parent)
+        self.widget.setReadOnly(True)
+
+    def emit(self, record):
+        msg = self.format(record)
+        self.widget.appendPlainText(msg)
+
+
+class MyDialog(QtWidgets.QDialog, QtWidgets.QPlainTextEdit):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        logTextBox = QTextEditLogger(self)
+        # You can format what is printed to text box
+        logTextBox.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        logging.getLogger().addHandler(logTextBox)
+        # You can control the logging level
+        logging.getLogger().setLevel(logging.DEBUG)
+
+        self._button = QtWidgets.QPushButton(self)
+        self._button.setText('Test Me')
+
+        layout = QtWidgets.QVBoxLayout()
+        # Add the new logging box widget to the layout
+        layout.addWidget(logTextBox.widget)
+        layout.addWidget(self._button)
+        self.setLayout(layout)
+
+        # Connect signal to slot
+        self._button.clicked.connect(self.test)
+
+    def test(self):
+        logging.debug('damn, a bug')
+        logging.info('something to remember')
+        logging.warning('that\'s not right')
+        logging.error('foobar')
+
+app = QtWidgets.QApplication(sys.argv)
+dlg = MyDialog()
+dlg.show()
+dlg.raise_()
+sys.exit(app.exec_())
+```
+
+#### 如何在 QT 中将小部件动态添加到小部件的布局中(嵌入来自 Qt Designer 的自定义小部件)
+
+[参考](https://www.pythonguis.com/tutorials/embed-pyqtgraph-custom-widgets-qt-app/)
+
+#### qt 编译报错 The name 'layoutWidget' (QWidget) is already in use
+
+```angular2html
+ The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'
+```
+
+文本编辑器打开 ui 文件 ，改重复的名 ， 属于是 qt designer 的 bug
